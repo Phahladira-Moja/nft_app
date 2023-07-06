@@ -2,10 +2,28 @@ import { View, Text, Image } from "react-native";
 import React from "react";
 import { COLORS, SIZES, SHADOWS, FONTS, assets } from "../constants";
 
-export const NFTTitle = () => {
+export const NFTTitle = ({ title, subtitle, titleSize, subtitleSize }) => {
   return (
     <View>
-      <Text>NFTTitle</Text>
+      <Text
+        style={{
+          fontFamily: FONTS.semiBold,
+          fontSize: titleSize,
+          color: COLORS.primary,
+        }}
+      >
+        {title}
+      </Text>
+
+      <Text
+        style={{
+          fontFamily: FONTS.regular,
+          fontSize: subtitleSize,
+          color: COLORS.primary,
+        }}
+      >
+        {subtitle}
+      </Text>
     </View>
   );
 };
@@ -46,8 +64,37 @@ export const People = () => {
 
 export const EndDate = () => {
   return (
-    <View>
-      <Text>EndDate</Text>
+    <View
+      style={{
+        paddingHorizontal: SIZES.font,
+        paddingVertical: SIZES.base,
+        backgroundColor: COLORS.white,
+        justifyContent: "center",
+        alignItems: "center",
+        ...SHADOWS.light,
+        elevation: 1,
+        maxWidth: "50%",
+      }}
+    >
+      <Text
+        style={{
+          fontFamily: FONTS.regular,
+          fontSize: SIZES.small,
+          color: COLORS.primary,
+        }}
+      >
+        Ending in:
+      </Text>
+
+      <Text
+        style={{
+          fontFamily: FONTS.semiBold,
+          fontSize: SIZES.medium,
+          color: COLORS.primary,
+        }}
+      >
+        12h 30m
+      </Text>
     </View>
   );
 };
