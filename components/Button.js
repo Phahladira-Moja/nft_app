@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
-import { COLORS, SIZES, SHADOWS } from "../constants";
+import { COLORS, SIZES, SHADOWS, FONTS } from "../constants";
 
 // This method allows more than one component to be returned
 export const CircleButton = ({ imgUrl, handlePress, ...props }) => {
@@ -28,11 +28,29 @@ export const CircleButton = ({ imgUrl, handlePress, ...props }) => {
   );
 };
 
-export const RectButton = () => {
+export const RectButton = ({ minWidth, fontSize, handlePress, ...props }) => {
   return (
-    <View>
-      <Text>Rect Button</Text>
-    </View>
+    <TouchableOpacity
+      style={{
+        minWidth: minWidth,
+        backgroundColor: COLORS.primary,
+        borderRadius: SIZES.extraLarge,
+        padding: SIZES.small,
+        ...props,
+      }}
+      onPress={handlePress}
+    >
+      <Text
+        style={{
+          fontFamily: FONTS.semiBold,
+          fontSize: fontSize,
+          color: COLORS.white,
+          textAlign: "center",
+        }}
+      >
+        Place a bid
+      </Text>
+    </TouchableOpacity>
   );
 };
 
